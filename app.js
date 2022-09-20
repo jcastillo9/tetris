@@ -2,16 +2,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
   const squares = Array.from(document.querySelectorAll(".grid div"));
   const ScoreDisplay = document.querySelector("#score");
-  const StartBtn = document.querySelector("#.start0b");
+  const StartBtn = document.querySelector("#start");
   const width = 10;
 
   // shapes
   const lShape = [
-    [1, width + 1, width * 2 + 1, 2],
-    [width, width + 1, width + 2, width * 2 + 2],
-    [1, width + 1, width * 2 + width * 2],
-    [width, width * 2, width * 2 + 1, width * 2 + 2],
-  ];
+    [1, width+1, width*2+1, 2],
+    [width, width+1, width+2, width*2+2],
+    [1, width+1, width*2+1, width*2],
+    [width, width*2, width*2+1, width*2+2]
+  ]
   const sShape = [
     [0, width, width + 1, width * 2 + 1],
     [width + 1, width + 2, width * 2, width * 2 + 1],
@@ -41,4 +41,17 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const theShapes = [iShape, sShape, tShape, oShape, iShape]
+
+  const currentPosition = 4
+  const current = theShapes[0][0]
+
+//draw the first rotation
+
+function draw() {
+    current.forEach(index => {
+        squares[currentPosition +index].classList.add('tetromino')
+    })
+}
+
+draw()
 });
