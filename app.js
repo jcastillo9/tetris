@@ -43,10 +43,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const theShapes = [iShape, sShape, tShape, oShape, iShape]
 
   const currentPosition = 4
+//randomly select a shape and first position
+  const random = Math.floor(Math.random()*theShapes.length)
   const current = theShapes[0][0]
+  console.log(random)
+
 
 //draw the first rotation
-
 function draw() {
     current.forEach(index => {
         squares[currentPosition +index].classList.add('tetromino')
@@ -54,4 +57,8 @@ function draw() {
 }
 
 draw()
+
+
+
+
 });
