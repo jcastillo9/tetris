@@ -42,8 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const theShapes = [iShape, sShape, tShape, oShape, iShape]
 
-  const currentPosition = 4
-  const currentRotation =0
+  let currentPosition = 4
+  let currentRotation = 0
 
 //randomly select a shape and first position
   const random = Math.floor(Math.random()*theShapes.length)
@@ -61,8 +61,16 @@ function undraw() {
     current.forEach(index => {
         squares[currentPosition + index].classList.remove['tetromino']
     })
+
 }
 
+//adding timer to move shape down every second
+timerId = setInterval(moveDown, 1000)
 
-
+//move shape down
+function moveDown() {
+    undraw()
+    currentPosition += width
+    draw()
+  }
 });
