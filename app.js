@@ -43,21 +43,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const theShapes = [iShape, sShape, tShape, oShape, iShape]
 
   const currentPosition = 4
+  const currentRotation =0
+
 //randomly select a shape and first position
   const random = Math.floor(Math.random()*theShapes.length)
-  const current = theShapes[0][0]
-  console.log(random)
+  const current = theShapes[random][currentRotation]
 
-
-//draw the first rotation
+//draw the shape 
 function draw() {
     current.forEach(index => {
         squares[currentPosition +index].classList.add('tetromino')
     })
 }
 
-draw()
-
+//undraw the shape
+function undraw() {
+    current.forEach(index => {
+        squares[currentPosition + index].classList.remove['tetromino']
+    })
+}
 
 
 
