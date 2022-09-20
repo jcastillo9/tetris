@@ -72,5 +72,18 @@ function moveDown() {
     undraw()
     currentPosition += width
     draw()
+    freeze()
   }
+
+//freeze the shape
+function freeze(){
+    if(current.some(index => squares[currentPosition + index + width].classList.contains('taken'))) {
+        current.forEach(index => squares[currentPosition +index].classList.add('taken'))
+        //a new shape starts moving down
+        random = Math.floor(Math.random() * theShapes.length)
+        current = theShapes[random[currentRotation]]
+        currentPosition = 4
+        draw()
+    }
+}
 });
