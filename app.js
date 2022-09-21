@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
-  const squares = Array.from(document.querySelectorAll(".grid div"));
+  let squares = Array.from(document.querySelectorAll(".grid div"));
   const ScoreDisplay = document.querySelector("#score");
   const StartBtn = document.querySelector("#start");
   const width = 10;
@@ -46,26 +46,26 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentRotation = 0
 
 //randomly select a shape and first position
-  const random = Math.floor(Math.random()*theShapes.length)
-  const current = theShapes[random][currentRotation]
+let random = Math.floor(Math.random()*theShapes.length)
+let current = theShapes[random][currentRotation]
 
 //draw the shape 
 function draw() {
     current.forEach(index => {
-        squares[currentPosition +index].classList.add('tetromino')
+        squares[currentPosition + index].classList.add('tetromino')
     })
 }
 
 //undraw the shape
 function undraw() {
     current.forEach(index => {
-        squares[currentPosition + index].classList.remove['tetromino']
+        squares[currentPosition + index].classList.remove('tetromino')
     })
 
 }
 
 //adding timer to move shape down every second
-timerId = setInterval(moveDown, 1000)
+timerId = setInterval(moveDown, 100)
 
 //move shape down
 function moveDown() {
@@ -76,12 +76,12 @@ function moveDown() {
   }
 
 //freeze the shape
-function freeze(){
+function freeze() {
     if(current.some(index => squares[currentPosition + index + width].classList.contains('taken'))) {
-        current.forEach(index => squares[currentPosition +index].classList.add('taken'))
+      current.forEach(index => squares[currentPosition + index].classList.add('taken'))
         //a new shape starts moving down
         random = Math.floor(Math.random() * theShapes.length)
-        current = theShapes[random[currentRotation]]
+        current = theShapes[random][currentRotation]
         currentPosition = 4
         draw()
     }
