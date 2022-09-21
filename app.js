@@ -67,6 +67,14 @@ function undraw() {
 //adding timer to move shape down every second
 timerId = setInterval(moveDown, 100)
 
+//assign function for keycodes
+function control(e) {
+    if(e.keycode === 37) {
+        moveLeft()
+    }
+}
+document.addEventListener('keyup', control)
+
 //move shape down
 function moveDown() {
     undraw()
