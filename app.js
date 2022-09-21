@@ -65,7 +65,7 @@ function undraw() {
 }
 
 //adding timer to move shape down every second
-timerId = setInterval(moveDown, 100)
+timerId = setInterval(moveDown, 1000)
 
 //assign function for keycodes
 function control(e) {
@@ -74,7 +74,7 @@ function control(e) {
     } else if(e.keyCode === 38) {
         //rotate()
     } else if (e.keyCode === 39) {
-        //moveRight()
+        moveRight()
     } else if (e.keyCode === 40) {
         moveDown()
     }
@@ -114,5 +114,17 @@ function moveLeft() {
     draw()
 }
 
+//move shape to right until it reaches the edge
+function moveRight() {
+    undraw()
+    const isAtRightEdge = current.some(index => (currentPosition +index) % width === width -1)
+
+    if(!isAtRightEdge) currentPosition +=1
+
+    if(current.some(index => squares[currentPosition +index].classList.contains('taken'))) {
+        currentPosition -=1
+    }
+    draw()
+}
 
 });
