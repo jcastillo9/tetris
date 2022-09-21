@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const ScoreDisplay = document.querySelector("#score");
   const StartBtn = document.querySelector("#start");
   const width = 10;
+  let nextRandom = 0
 
   // shapes
   const lShape = [
@@ -94,10 +95,12 @@ function freeze() {
     if(current.some(index => squares[currentPosition + index + width].classList.contains('taken'))) {
       current.forEach(index => squares[currentPosition + index].classList.add('taken'))
         //a new shape starts moving down
-        random = Math.floor(Math.random() * theShapes.length)
+        random = nextRandom
+        nextRandom = Math.floor(Math.random() * theShapes.length)
         current = theShapes[random][currentRotation]
         currentPosition = 4
         draw()
+        displayShape()
     }
 }
 
@@ -136,6 +139,30 @@ function rotate() {
     } 
     current = theShapes[random][currentRotation]
     draw()
+}
+
+//preview next shape in mini grid
+const displayShapes = document.querySelectorAll('.mini-grid div')
+const displayWidth = 4
+let displayIndex = 0
+
+//shapes without rotations
+const nextShape = [
+    [1, displayWidth+1, displayWidth*2+1, 2], //lShape
+    [0, displayWidth, displayWidth+1, displayWidth*2+1], //zShape
+    [1, displayWidth, displayWidth+1, displayWidth+2], //tShape
+    [0, 1, displayWidth, displayWidth+1], //oShape
+    [1, displayWidth+1, displayWidth*2+1, displayWidth*3+1] //iShape
+]
+
+//display shape in mini-grid
+function displayShape() {
+    displayShapes.forEach(square => {
+        square.classList.remove('tetromino')
+    })
+    nextShape[nextRandom].forEach(index => {
+        displayShapes[displayIndex +index].classList.add('tetromino')
+    })
 }
 
 });
