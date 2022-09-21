@@ -69,8 +69,14 @@ timerId = setInterval(moveDown, 100)
 
 //assign function for keycodes
 function control(e) {
-    if(e.keycode === 37) {
+    if(e.keyCode === 37) {
         moveLeft()
+    } else if(e.keyCode === 38) {
+        //rotate()
+    } else if (e.keyCode === 39) {
+        //moveRight()
+    } else if (e.keyCode === 40) {
+        moveDown()
     }
 }
 document.addEventListener('keyup', control)
@@ -105,7 +111,6 @@ function moveLeft() {
     if(current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
     currentPosition +=1
     }
-
     draw()
 }
 
