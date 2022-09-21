@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     [width, width + 1, width + 2, width + 3],
   ];
 
-  const theShapes = [iShape, sShape, tShape, oShape, iShape]
+  const theShapes = [lShape, sShape, tShape, oShape, iShape]
 
   let currentPosition = 4
   let currentRotation = 0
