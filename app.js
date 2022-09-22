@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const startBtn = document.querySelector("#start");
   const width = 10;
   const colors = [
-      'yellow',
+      'red',
       'purple',
       'black',
       'blue',
