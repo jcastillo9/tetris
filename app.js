@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const startBtn = document.querySelector("#start");
   const width = 10;
   let nextRandom = 0
+  let timerId
 
   // shapes
   const lShape = [
@@ -66,7 +67,7 @@ function undraw() {
 }
 
 //adding timer to move shape down every second
-timerId = setInterval(moveDown, 1000)
+// timerId = setInterval(moveDown, 1000)
 
 //assign function for keycodes
 function control(e) {
