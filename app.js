@@ -76,9 +76,6 @@ function undraw() {
 
 }
 
-//adding timer to move shape down every second
-// timerId = setInterval(moveDown, 1000)
-
 //assign function for keycodes
 function control(e) {
     if(e.keyCode === 37) {
@@ -157,7 +154,7 @@ function rotate() {
 //preview next shape in mini grid
 const displayShapes = document.querySelectorAll('.mini-grid div')
 const displayWidth = 4
-let displayIndex = 0
+const displayIndex = 0
 
 //shapes without rotations
 const nextShape = [
@@ -213,7 +210,6 @@ function addScore() {
         }
     }
 }
-
 
 //gameover
 function gameOver() {
