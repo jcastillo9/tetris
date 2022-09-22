@@ -201,4 +201,12 @@ function addScore() {
     }
 }
 
+
+//gameover
+function gameOver() {
+    if(current.some(index => squares[currentPosition +index].classList.contains('taken'))) {
+        scoreDisplay.innerHTML = "GAME OVER"
+        clearInterval9(timerId)
+    }
+}
 });
