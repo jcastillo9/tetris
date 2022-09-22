@@ -63,6 +63,7 @@ let current = theShapes[random][currentRotation]
 function draw() {
     current.forEach(index => {
         squares[currentPosition + index].classList.add('tetromino')
+        squares[currentPosition + index].style.backgroundcolor = colors[random]
     })
 }
 
@@ -70,6 +71,7 @@ function draw() {
 function undraw() {
     current.forEach(index => {
         squares[currentPosition + index].classList.remove('tetromino')
+        squares[currentPosition + index].style.backgroundcolor = ''
     })
 
 }
@@ -170,9 +172,11 @@ const nextShape = [
 function displayShape() {
     displayShapes.forEach(square => {
         square.classList.remove('tetromino')
+        squares.style.backgroundcolor = ''
     })
     nextShape[nextRandom].forEach(index => {
         displayShapes[displayIndex +index].classList.add('tetromino')
+        displayShape[displayIndex].style.backgroundcolor = colors[nextRandom]
     })
 }
 
@@ -200,6 +204,7 @@ function addScore() {
             row.forEach(index => {
                 squares[index].classList.remove('taken')
                 squares[index].classList.remove('tetromino')
+                squares[index].style.backgroundcolor = ''
             })
             const squaresRemoved = squares.splice(i, width)
             //append new squares to grid
