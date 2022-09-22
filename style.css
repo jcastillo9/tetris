@@ -1,28 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
-
-body {
-    font-family: 'PT Sans Narrow', sans-serif;
-    text-transform: uppercase;
-    margin: auto;
-}
-
-h1 {
-    text-align: center;
-    font-size: 3rem;
-}
-
-.main {
-    border: 2px blue solid;
-    display: flex;
-}
-
-.score {
-    border: 2px orange solid;
-}
-
 .container {
-    display: block;
-    border: 2px black solid;
+    display: flex;
 }
 .grid {
     width: 200px;
@@ -30,7 +7,6 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     background-color: yellow;
-    border: 2px green solid;
 }
 
 .grid div {
@@ -43,13 +19,12 @@ h1 {
 }
 
 .mini-grid {
-    margin-right: 50px;
+    margin-left: 50px;
     width: 80px;
     height: 80px;
     display: flex;
     flex-wrap: wrap;
     background-color: yellow;
-    border: 2px red solid;
 }
 
 .mini-grid div {
