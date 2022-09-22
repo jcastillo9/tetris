@@ -175,7 +175,7 @@ startBtn.addEventListener('click', () => {
         timerId = null
     } else {
         draw()
-        timerId = setInterval(moveDown, 1000)
+        timerId = setInterval(moveDown, 100)
         nextRandom = Math.floor(Math.random()*theShapes.length)
         displayShape()
     }
