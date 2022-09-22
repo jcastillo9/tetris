@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
   let squares = Array.from(document.querySelectorAll(".grid div"));
-  const ScoreDisplay = document.querySelector("#score");
-  const StartBtn = document.querySelector("#start");
+  const scoreDisplay = document.querySelector("#score");
+  const startBtn = document.querySelector("#start");
   const width = 10;
   let nextRandom = 0
 
@@ -164,5 +164,10 @@ function displayShape() {
         displayShapes[displayIndex +index].classList.add('tetromino')
     })
 }
+
+//make start button work
+startBtn.addEventListener('click', () => {
+
+})
 
 });
