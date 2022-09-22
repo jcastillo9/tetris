@@ -104,6 +104,7 @@ function freeze() {
         draw()
         displayShape()
         addScore()
+        gameOver()
     }
 }
 
