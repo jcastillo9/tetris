@@ -4,6 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const scoreDisplay = document.querySelector("#score");
   const startBtn = document.querySelector("#start");
   const width = 10;
+  const colors = [
+      'yellow',
+      'purple',
+      'black',
+      'blue',
+      'pink'
+  ]
   let nextRandom = 0
   let timerId
   let score = 0
